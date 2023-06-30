@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('typeLogin',() => {
+    cy.get('#__xmlview0--inputUserName-inner',{timeout:8000}).type('ttakemoto');
+    cy.get('#__xmlview0--inputPassword-inner',{timeout:8000}).type('1234');
+    cy.get('#__xmlview0--btnSubmit-img').click()
+})
