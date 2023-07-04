@@ -19,3 +19,8 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 require('cypress-xpath')
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    console.error('Excepción no capturada:', err);
+    return false;
+  });
