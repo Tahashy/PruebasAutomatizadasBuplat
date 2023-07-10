@@ -26,6 +26,7 @@ describe('Ingresamos Login',() =>{
          cy.get('#__xmlview5--save-inner').click()
          cy.get('#__button17-inner').click()
         
+         
        
       
 

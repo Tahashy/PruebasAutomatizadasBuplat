@@ -21,7 +21,7 @@ describe('Ingresamos Login',() =>{
         cy.get('#__xmlview5--viewDependencies-inner').click()
         
         
-        //Ver Dependencia
+     
        
       
 

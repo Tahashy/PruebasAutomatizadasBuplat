@@ -31,7 +31,7 @@ describe('Ingresamos Login',() =>{
         cy.get('#__button17-inner').click()   
         
         
-        //Ver Dependencia
+       
        
       
 
