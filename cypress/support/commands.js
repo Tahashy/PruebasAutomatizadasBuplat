@@ -29,3 +29,8 @@ Cypress.Commands.add('typeLogin',() => {
     cy.get('#__xmlview0--inputPassword-inner',{timeout:8000}).type('1234');
     cy.get('#__xmlview0--btnSubmit-img').click()
 })
+
+/*Cypress.Commands.add("fillElementWithoutScroll", { prevSubject: true }, (subject) => {
+    // Usa scrollIntoView sin desplazamiento para mantener el elemento en la vista sin moverlo
+    subject[0].scrollIntoView({ block: "nearest", inline: "nearest" });
+  })*/

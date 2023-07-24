@@ -1,7 +1,7 @@
 
 
 describe('Ingresamos Login',() =>{
-    it('Crear Usuario',() =>{
+    it('Editar Usuario',() =>{
         cy.visit('https://cloudbuplat.com/buplat_rt_config/')
         cy.wait(3000)
         cy.typeLogin()
@@ -10,17 +10,16 @@ describe('Ingresamos Login',() =>{
         //
         cy.wait(3000)
         cy.get('#__icon23 > .sapUiIconTitle').click()
-        cy.wait(3000)
         cy.get('#__item1-navList-1-navListItem-navList-1-1-a').click({force:true})
-        cy.wait(5000)
-        cy.get('#__xmlview6--add-inner').click()
-        cy.wait(3000)
-        cy.get('#__xmlview6--buserUsername-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
-        .type('ttester', { force: true })
-        cy.get('#__xmlview6--buserPassword-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
-        .type('1234', { force: true })
-        cy.get('#__xmlview6--buserConfirmPassword-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
-        .click({force:true})
+        cy.wait(6000)
+        cy.get('#__xmlview6--searchText-I').type('ttester',{force: true} )
+        cy.contains('ttester').click()
+        cy.get('#__xmlview6--edit-inner').click()
+
+
+        cy.get('#__xmlview6--buserEmail-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+        .clear({force: true} )
+     //Editar Correo 
         cy.get('#__xmlview6--buserEmail-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
         .type('tester2023@gmail.com', { force: true })
         cy.get('#__xmlview6--buserValidityStartDate-icon').click({ force: true })   
@@ -64,7 +63,13 @@ describe('Ingresamos Login',() =>{
         //Informacion de la Empresa
 
         cy.get('#__xmlview6--buserName-inner').scrollIntoView({ block: 'nearest', inline: 'nearest' })
+        .clear({force:true})
+
+        cy.get('#__xmlview6--buserName-inner').scrollIntoView({ block: 'nearest', inline: 'nearest' })
         .type('Tester', { force: true })
+
+        cy.get('#__xmlview6--buserLastName-inner').scrollIntoView({ block: 'nearest', inline: 'nearest' })
+        .clear({force:true})
 
         cy.get('#__xmlview6--buserLastName-inner').scrollIntoView({ block: 'nearest', inline: 'nearest' })
         .type('Prueba', { force: true })
@@ -88,18 +93,35 @@ describe('Ingresamos Login',() =>{
         .click({ force: true });
         cy.get('#__xmlview6--buserCountry')
         .type('Pe{enter}',{force:true})
+
+        cy.get('#__xmlview6--buserCity-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+        .clear({force:true})
         cy.get('#__xmlview6--buserCity-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
         .type('La esperanza', { force: true })
+
+        cy.get('#__xmlview6--buserPostalCode-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+        .clear({force:true})
         cy.get('#__xmlview6--buserPostalCode-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
         .type('41', { force: true })
+
+        cy.get('#__xmlview6--buserRegion-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+        .clear({force:true})
         cy.get('#__xmlview6--buserRegion-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
         .type('La libertad', { force: true })
+
+        cy.get('#__xmlview6--buserAddress-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+        .clear({force:true})
         cy.get('#__xmlview6--buserAddress-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
         .type('Av.Manuel Arevalo', { force: true })
+
+        cy.get('#__xmlview6--buserReference-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+        .clear({force:true})
         cy.get('#__xmlview6--buserReference-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
         .type('Esperanza Baja', { force: true })
 
      //Comunicacion 
+     cy.get('#__xmlview6--buserCellphone-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+     .clear({force:true})
      cy.get('#__xmlview6--buserCellphone-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
      .type('123456789', { force: true })
      
@@ -108,13 +130,14 @@ describe('Ingresamos Login',() =>{
      cy.get('#__xmlview6--buserStandartCommMethod')
      .type('Whatsapp{enter}',{force:true})
 
-
+     cy.get('#__xmlview6--buserWhatsApp-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
+     .clear({force:true})
      cy.get('#__xmlview6--buserWhatsApp-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
      .type('123456789', { force: true })
 
      //Roles 
 
-     cy.get('#__button19-inner').click({force:true})
+     /*cy.get('#__button19-inner').click({force:true})
 
      cy.get('#__input0-__clone508-inner').scrollIntoView({ block: "nearest", inline: "nearest" })
      .type('Super', { force: true }).scrollIntoView({ block: "nearest", inline: "nearest" })
@@ -125,7 +148,7 @@ describe('Ingresamos Login',() =>{
      cy.get('#__picker2-__clone508-icon').click({ force: true })   
      cy.xpath("//div[@id='__picker2-__clone508-cal']//span[text()='7']").click({force:true})
      cy.get('#__picker3-__clone508-icon').click({ force: true })
-     cy.xpath("//div[@id='__picker3-__clone508-cal']//span[text()='31']").click({force: true})
+     cy.xpath("//div[@id='__picker3-__clone508-cal']//span[text()='31']").click({force: true})*/
 
     cy.get('#__box0-arrow').scrollIntoView({ block: 'nearest', inline: 'nearest' })
      .click({ force: true });
@@ -133,7 +156,7 @@ describe('Ingresamos Login',() =>{
 
     cy.get('#__xmlview6--save-inner').click()
 
-    cy.get('#__button44-inner').click()
+    cy.get('#__button42-inner').click()
 
 
     })  
